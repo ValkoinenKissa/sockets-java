@@ -74,6 +74,14 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Source: https://mvnrepository.com/artifact/com.gluonhq.attach/lifecycle -->
+        <dependency>
+            <groupId>com.gluonhq.attach</groupId>
+            <artifactId>lifecycle</artifactId>
+            <version>4.0.21</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
