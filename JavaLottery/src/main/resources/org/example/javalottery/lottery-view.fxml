@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.javalottery.LotteryController"
+      spacing="12" alignment="TOP_CENTER">
+    <padding>
+        <Insets top="18" right="18" bottom="18" left="18"/>
+    </padding>
+
+    <Label text="Lotería Nacional" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Número:"/>
+        <TextField fx:id="numberField" promptText="5 dígitos (ej. 12345)" prefColumnCount="10"/>
+        <Button fx:id="checkButton" text="Comprobar" onAction="#onCheckClick"/>
+    </HBox>
+
+    <Separator/>
+
+    <Label text="Estado:" style="-fx-font-weight: bold;"/>
+    <Label fx:id="statusLabel" text="Arrancando..." wrapText="true"/>
+
+    <Label text="Resultado:" style="-fx-font-weight: bold;"/>
+    <Label fx:id="resultLabel" text="-" wrapText="true"/>
+
+</VBox>

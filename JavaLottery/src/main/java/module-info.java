@@ -6,7 +6,11 @@ module org.example.javalottery {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
+    requires annotations;
 
     opens org.example.javalottery to javafx.fxml;
     exports org.example.javalottery;
+
+    exports sockets.client;
+    exports sockets.server;
 }
