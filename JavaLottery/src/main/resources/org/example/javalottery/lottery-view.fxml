@@ -1,30 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.javalottery.LotteryController"
-      spacing="12" alignment="TOP_CENTER">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="578.0" spacing="12" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="org.example.javalottery.LotteryController">
     <padding>
-        <Insets top="18" right="18" bottom="18" left="18"/>
+        <Insets bottom="18" left="18" right="18" top="18" />
     </padding>
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../images/img.png" />
+            </image>
+         </ImageView>
+      </children>
+   </HBox>
 
-    <Label text="Lotería Nacional" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+          <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Lotería de Navidad" />
 
-    <HBox spacing="10" alignment="CENTER">
-        <Label text="Número:"/>
-        <TextField fx:id="numberField" promptText="5 dígitos (ej. 12345)" prefColumnCount="10"/>
-        <Button fx:id="checkButton" text="Comprobar" onAction="#onCheckClick"/>
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="Número:" />
+        <TextField fx:id="numberField" prefColumnCount="10" promptText="5 dígitos (ej. 12345)" />
+        <Button fx:id="checkButton" onAction="#onCheckClick" text="Comprobar" />
     </HBox>
 
-    <Separator/>
+    <Separator />
 
-    <Label text="Estado:" style="-fx-font-weight: bold;"/>
-    <Label fx:id="statusLabel" text="Arrancando..." wrapText="true"/>
+    <Label style="-fx-font-weight: bold;" text="Estado:" />
+    <Label fx:id="statusLabel" text="Arrancando..." wrapText="true" />
 
-    <Label text="Resultado:" style="-fx-font-weight: bold;"/>
-    <Label fx:id="resultLabel" text="-" wrapText="true"/>
+    <Label style="-fx-font-weight: bold;" text="Resultado:" />
+    <Label fx:id="resultLabel" text="-" wrapText="true" />
 
 </VBox>

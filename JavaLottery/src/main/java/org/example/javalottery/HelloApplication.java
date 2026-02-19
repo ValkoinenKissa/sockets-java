@@ -34,7 +34,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("lottery-view.fxml"));
-        Scene scene = new Scene(loader.load(), 520, 260);
+        Scene scene = new Scene(loader.load());
 
         // Inyectar cliente al controller
         LotteryController controller = loader.getController();
