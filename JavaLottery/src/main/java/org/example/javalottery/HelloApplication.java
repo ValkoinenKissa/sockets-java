@@ -13,8 +13,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void init() {
-        // 1) Arrancar servidor en segundo plano (accept() bloquea)
-        // tu servidor con bucle 1 conexión
+        // Arrancar servidor en segundo plano (accept() bloquea)
         Thread serverThread = new Thread(() -> {
             try {
                 SocketTCPServer server = new SocketTCPServer();
@@ -27,7 +26,7 @@ public class HelloApplication extends Application {
         serverThread.setDaemon(true);
         serverThread.start();
 
-        // 2) Preparar cliente (conectamos después)
+        // Preparar cliente
         client = new SocketTCPClient("localhost", 2021);
     }
 
@@ -48,11 +47,9 @@ public class HelloApplication extends Application {
 
     @Override
     public void stop() {
-        // Cierre limpio
+        // Cierre
         try {
             if (client != null) {
-                // Opcional: si implementaste sendRaw("QUIT") en el cliente:
-                // client.sendRaw("QUIT");
                 client.stop();
             }
         } catch (Exception ignored) {}

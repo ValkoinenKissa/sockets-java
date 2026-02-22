@@ -17,7 +17,7 @@ public class LotteryController {
 
     private SocketTCPClient client;
 
-    /** Inyección del cliente desde la Application (mejor que crear el cliente aquí). */
+    /** Inyección del cliente desde la Application. */
     public void setClient(SocketTCPClient client) {
         this.client = client;
     }
@@ -30,7 +30,7 @@ public class LotteryController {
         Task<Void> connectTask = new Task<>() {
             @Override
             protected Void call() throws Exception {
-                client.start(); // bloqueante → por eso va en Task
+                client.start(); // bloqueante, por eso va en Task
                 return null;
             }
         };
